@@ -2,7 +2,7 @@
 
 How to use:
 
-1. [Download](https://github.com/corsairdnb/obs-widgets/archive/gh-pages.zip) whole repo to your local machine.
+1. [Download](https://github.com/corsairdnb/obs-widgets/archive/master.zip) whole repo to your local machine.
 1. Add browsersource instance to the scene.
 1. Choose local folder.
 1. Customize text content in *.txt files.
