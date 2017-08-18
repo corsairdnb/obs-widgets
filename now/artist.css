@@ -1,14 +1,14 @@
 @font-face {
   font-family: Bluescreens;
   font-style: normal;
-  font-weight: 700;
-  src: url(http://11thradio.com/fonts/TTBluescreens-Bold.ttf);
+  font-weight: 400;
+  src: local('TTBluescreens-Regular'), url(../TTBluescreens-Regular.ttf);
 }
 @font-face {
   font-family: 'Core Sans';
   font-style: normal;
   font-weight: 400;
-  src: url(http://11thradio.com/fonts/CoreSansD35Regular.otf);
+  src: local('CoreSansD35Regular'), url(../CoreSansD35Regular.otf);
 }
 
 html, body {
