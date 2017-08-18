@@ -2,13 +2,13 @@
     font-family: Bluescreens;
     font-style: normal;
     font-weight: 400;
-    src: local('TTBluescreens-Regular');
+    src: local('TTBluescreens-Regular'), url(../TTBluescreens-Regular.ttf);
 }
 @font-face {
     font-family: 'Core Sans';
     font-style: normal;
     font-weight: 400;
-    src: local('CoreSansD35Regular');
+    src: local('CoreSansD35Regular'), url(../CoreSansD35Regular.otf);
 }
 html, body {
     min-height: 100%;
