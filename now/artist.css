@@ -47,6 +47,11 @@ body > * {
     position: absolute;
     right: 1.5vh;
     top: 1.5vh;
+    display: block;
+    width: 151px;
+    height: 40px;
+    background: url('live.png') no-repeat 0 0;
+    background-size: contain;
 }
 
 .artist {

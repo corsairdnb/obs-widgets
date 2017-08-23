@@ -1,0 +1,15 @@
+.overlay {
+    background: rgba(255, 255, 255, .97);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% -webkit-calc(100% - 4vh), -webkit-calc(100% - 4vh) 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vh), calc(100% - 4vh) 100%, 0 100%);
+}
+.artist-name {
+    color: #1685ca;
+}
+.artist-now {
+    color: #333;
+}
+.overlay-logo {
+    background-image: url('live-white.png');
+    opacity: 0.8;
+}
