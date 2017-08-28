@@ -111,12 +111,20 @@ body {
     margin: auto;
 }
 
-.logo {
+.logo-1 {
     position: absolute;
     height: 8%;
     left: 0;
     right: 0;
     top: 37%;
+    margin: auto;
+}
+.logo-2 {
+    position: absolute;
+    height: 14%;
+    left: 0;
+    right: 0;
+    top: 43%;
     margin: auto;
 }
 
