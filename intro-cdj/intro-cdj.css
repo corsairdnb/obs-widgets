@@ -1,0 +1,132 @@
+@font-face {
+    font-family: Bluescreens;
+    font-style: normal;
+    font-weight: 400;
+    src: local('TTBluescreens-Regular'), url(../TTBluescreens-Regular.ttf);
+}
+@font-face {
+    font-family: 'Core Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('CoreSansD35Regular'), url(../CoreSansD35Regular.otf);
+}
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Core Sans', sans-serif;
+    font-weight: 400;
+    background-color: #000;
+}
+
+.layer-1 {
+    background: url('bg.jpg') no-repeat 50% 50% / 138% auto;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 1;
+}
+
+.cdj {
+    width: 80vh;
+    height: 80vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation: rotation 3s infinite linear;
+    animation: rotation 3s infinite linear;
+}
+
+.round-1 {
+    width: 80vh;
+    height: 80vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #000;
+    border-radius: 100%;
+}
+
+.round-2 {
+    width: 46vh;
+    height: 46vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: #05a2c8 0.5vh dashed;
+    border-radius: 100%;
+    -webkit-animation: rotation 3s infinite linear;
+    animation: rotation 3s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.text-layer {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.logo {
+    position: absolute;
+    height: 18vh;
+    left: 0;
+    right: 0;
+    bottom: 43vh;
+    margin: auto;
+}
+
+.program-name {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 50vh;
+    margin-top: -5.5vh;
+    text-align: center;
+    font: 400 15vh/1em Bluescreens;
+    text-transform: uppercase;
+    text-shadow: 0 0 0 transparent;
+    -webkit-animation: glow 10s infinite;
+    animation: glow 10s infinite;
+}
+
+.wait-please {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 43vh;
+    margin: auto;
+    text-align: center;
+    font-size: 3vh;
+}
