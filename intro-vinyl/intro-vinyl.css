@@ -42,12 +42,12 @@ body {
 }
 .platter {
     background: url('technics_platter.png') no-repeat 50% 50% / cover;
-    width: 93vh;
-    height: 93vh;
+    width: 93.2vh;
+    height: 93.2vh;
     position: absolute;
     left: 0;
     right: 0;
-    top: -15px;
+    top: -12px;
     bottom: 0;
     margin: auto;
 }
