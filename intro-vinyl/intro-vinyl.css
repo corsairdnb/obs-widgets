@@ -1,0 +1,253 @@
+@font-face {
+    font-family: Bluescreens;
+    font-style: normal;
+    font-weight: 400;
+    src: local('TTBluescreens-Regular'), url(../TTBluescreens-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Core Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('CoreSansD35Regular'), url(../CoreSansD35Regular.otf);
+}
+
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Core Sans', sans-serif;
+    font-weight: 400;
+    background-color: #000;
+}
+
+.layer-1 {
+    background: url('technics.jpg') no-repeat 50% 50% / cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 1;
+}
+.platter {
+    background: url('technics_platter.png') no-repeat 50% 50% / cover;
+    width: 93vh;
+    height: 93vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -15px;
+    bottom: 0;
+    margin: auto;
+}
+
+.logo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.turning {
+    position: relative;
+}
+.layer,
+.turning,
+.wobble {
+    background: #000;
+    width: 85vh;
+    height: 84vh;
+    clip-path: circle(49% at 50% 50%);
+}
+
+.centered {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+#record {
+    background-color: #070707;
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.5);
+}
+
+#sheen {
+    display: block;
+    width: 100%;
+    height: 0;
+    box-shadow: 0 0 250px 100px rgba(255, 255, 255, 0.2);
+    -webkit-transform: rotate(45deg);
+    -webkit-transform-origin: 0;
+    transform: rotate(45deg);
+    transform-origin: 0;
+    position: absolute;
+    overflow: hidden;
+}
+
+#label {
+    display: block;
+    width: 33%;
+    height: 33%;
+    background-color: #CCC;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2);
+}
+
+#hole {
+    display: block;
+    width: 10%;
+    height: 10%;
+    background-color: #121314;
+    box-shadow: inset 0 0 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ========= GROOVES ========= */
+
+.groove {
+    display: block;
+    background-color: transparent;
+    border: 1px solid rgba(40, 40, 40, 1);
+    position: absolute !important;
+}
+
+.trackGroove {
+    border: 2px solid rgba(7, 7, 7, 0.2);
+}
+
+/* ========= ANIMATION ========= */
+
+.rotating {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 7s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-name: rotate;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.turning .backnforth {
+    -webkit-animation-name: backnforth;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-name: backnforth;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.turning .wobble {
+    -webkit-animation: wobble 20s infinite;
+    animation: wobble 20s infinite;
+    position: relative;
+}
+
+.rpm33 .rotating {
+    -webkit-animation-duration: 1.82s;
+    animation-duration: 1.82s;
+}
+
+.rpm45 .rotating {
+    -webkit-animation-duration: 1.33s;
+    animation-duration: 1.33s;
+}
+
+.rpm78 .rotating {
+    -webkit-animation-duration: 0.77s;
+    animation-duration: 0.77s;
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes backnforth {
+    33% {
+        -webkit-transform: rotate(-1deg);
+    }
+    66% {
+        -webkit-transform: rotate(1deg);
+    }
+}
+
+@-webkit-keyframes wobble {
+    33% {
+        -webkit-transform: rotate(0.1deg);
+    }
+    66% {
+        -webkit-transform: rotate(-0.1deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes backnforth {
+    33% {
+        transform: rotate(-1deg);
+    }
+    66% {
+        transform: rotate(1deg);
+    }
+}
+
+@keyframes wobble {
+    33% {
+        transform: rotate(0.1deg);
+    }
+    66% {
+        transform: rotate(-0.1deg);
+    }
+}
