@@ -1,0 +1,44 @@
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #000c13;
+}
+.layer-1 {
+    /*background: url('bg.jpg') no-repeat 50% 50% / contain;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.logo {
+    position: absolute;
+    height: 20vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.hat {
+    position: absolute;
+    height: 20vh;
+    left: 31vh;
+    right: 0;
+    top: 0;
+    bottom: 2vh;
+    margin: auto;
+}
