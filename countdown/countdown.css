@@ -1,0 +1,84 @@
+@font-face {
+    font-family: Bluescreens;
+    font-style: normal;
+    font-weight: 400;
+    src: local('TTBluescreens-Regular'), url(../TTBluescreens-Regular.ttf);
+}
+@font-face {
+    font-family: 'Core Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('CoreSansD35Regular'), url(../CoreSansD35Regular.otf);
+}
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Core Sans', sans-serif;
+    font-weight: 400;
+    background-color: #000;
+}
+.layer-1 {
+    background: url('bg.jpg') no-repeat 50% 50% / cover #629b61;
+    background-blend-mode: multiply;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+}
+
+.text-layer {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.logo-1 {
+    position: absolute;
+    height: 8%;
+    left: 0;
+    right: 0;
+    top: 37%;
+    margin: auto;
+}
+.logo-2 {
+    position: absolute;
+    height: 14%;
+    left: 0;
+    right: 0;
+    top: 43%;
+    margin: auto;
+}
+
+
+
+.wait-please {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 33vh;
+    margin: auto;
+    text-align: center;
+    font-size: 3.5vh;
+    text-transform: uppercase;
+    letter-spacing: .8vh;
+    background: linear-gradient(to right, rgba(41, 140, 5, 0) 20%, #298c05, rgba(41, 140, 5, 0) 80%);
+    padding: 3vh 0;
+    z-index: 100;
+}

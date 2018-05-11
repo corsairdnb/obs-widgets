@@ -11,4 +11,6 @@ How to use:
 Available widgets:
 
 * [Intro](http://corsairdnb.github.io/obs-widgets/intro)
+* [Intro CDJ](http://corsairdnb.github.io/obs-widgets/intro-cdj)
 * [Now playing](http://corsairdnb.github.io/obs-widgets/now)
+* [Countdown](http://corsairdnb.github.io/obs-widgets/countdown)

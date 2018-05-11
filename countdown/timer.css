@@ -1,0 +1,56 @@
+.timer {
+    width: 100vh;
+    height: 40vh;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 6.5vh;
+    bottom: 0;
+    margin: auto;
+}
+
+.timer--clock {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.clock-display-grp {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.clock-display-grp .number-grp {
+    width: auto;
+    display: inline-block;
+    height: 40vh;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.clock-display-grp .number-grp .number-grp-wrp {
+    width: 100%;
+    position: relative;
+}
+
+.clock-display-grp .number-grp .number-grp-wrp .num {
+    width: 100%;
+    position: relative;
+    height: 40vh;
+}
+
+.clock-separator {
+    width: auto;
+    vertical-align: top;
+    display: inline-block;
+    height: 40vh;
+}
+
+.num, .clock-separator {
+    font-size: 28vh;
+    line-height: 0;
+    font-weight: bold;
+}
