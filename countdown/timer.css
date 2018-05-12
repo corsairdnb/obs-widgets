@@ -34,6 +34,8 @@
 .clock-display-grp .number-grp .number-grp-wrp {
     width: 100%;
     position: relative;
+    -webkit-transition: -webkit-transform .4s ease-out;
+    transition: transform .4s ease-out;
 }
 
 .clock-display-grp .number-grp .number-grp-wrp .num {

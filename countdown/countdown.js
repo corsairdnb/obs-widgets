@@ -1,8 +1,7 @@
 $(function () {
 
     $.get('time.txt', function (text) {
-
-        TweenLite.defaultEase = Expo.easeOut;
+        // TweenLite.defaultEase = Expo.easeOut;
 
         initTimer(text); // other ways --> "0:15" "03:5" "5:2"
 
@@ -71,10 +70,12 @@ $(function () {
 
             function animateNum(group, arrayValue) {
 
-                TweenMax.killTweensOf(group.querySelector('.number-grp-wrp'));
-                TweenMax.to(group.querySelector('.number-grp-wrp'), 1, {
-                    y: -group.querySelector('.num-' + arrayValue).offsetTop
-                });
+                // TweenMax.killTweensOf(group.querySelector('.number-grp-wrp'));
+                // TweenMax.to(group.querySelector('.number-grp-wrp'), 1, {
+                //     y: -group.querySelector('.num-' + arrayValue).offsetTop
+                // });
+
+                $(group).find('.number-grp-wrp').css('-webkit-transform', 'translate3d(0,' + -group.querySelector('.num-' + arrayValue).offsetTop + 'px,0)');
 
             }
 
