@@ -1,0 +1,162 @@
+@font-face {
+    font-family: Bluescreens;
+    font-style: normal;
+    font-weight: 400;
+    src: local('TTBluescreens-Regular'), url(../TTBluescreens-Regular.ttf);
+}
+@font-face {
+    font-family: 'Core Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('CoreSansD35Regular'), url(../CoreSansD35Regular.otf);
+}
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Core Sans', sans-serif;
+    font-weight: 400;
+    background-color: #000;
+}
+.layer-1 {
+    background: url('bg.jpg') no-repeat 50% 50% / cover #629b61;
+    background-blend-mode: multiply;
+    width: 105%;
+    height: 105%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
+}
+
+.text-layer {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.logo {
+    position: absolute;
+    height: 12vh;
+    right: 5vh;
+    bottom: 5vh;
+}
+
+
+
+.wait-please {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 33vh;
+    margin: auto;
+    text-align: center;
+    font-size: 3.5vh;
+    text-transform: uppercase;
+    letter-spacing: .8vh;
+    background: linear-gradient(to right, rgba(41, 140, 5, 0) 20%, #298c05, rgba(41, 140, 5, 0) 80%);
+    padding: 3vh 0;
+    z-index: 100;
+}
+
+.timetable {
+    position: absolute;
+    left: 12vh;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.timetable__item {
+    font-size: 6.5vh;
+    margin: 0 0 .2em;
+    transition: all .3s;
+}
+.timetable__item.animated,
+.timetable b {
+    color: #88c587;
+}
+
+
+
+.weekday {
+    display: block;
+    position: absolute;
+    right: 7vh;
+    top: 5vh;
+    font-size: 2vh;
+    line-height: 1em;
+    letter-spacing: .3vh;
+    text-transform: uppercase;
+}
+.timer {
+    display: block;
+    position: absolute;
+    right: 7vh;
+    top: 5vh;
+}
+
+.timer--clock {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.clock-display-grp {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.clock-display-grp .number-grp {
+    width: auto;
+    display: inline-block;
+    height: 10vh;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.clock-display-grp .number-grp .number-grp-wrp {
+    width: 100%;
+    position: relative;
+    -webkit-transition: -webkit-transform 0s ease-out;
+    transition: transform 0s ease-out;
+}
+
+.clock-display-grp .number-grp .number-grp-wrp .num {
+    width: 100%;
+    position: relative;
+    height: 10vh;
+}
+
+.clock-separator {
+    width: auto;
+    vertical-align: top;
+    display: inline-block;
+    height: 10vh;
+}
+
+.num, .clock-separator {
+    font-size: 7vh;
+    line-height: 0;
+    font-weight: bold;
+}
