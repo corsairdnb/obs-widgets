@@ -11,16 +11,19 @@
 <body>
 
 <div class="layer-1"></div>
+<div class="layer-2"></div>
+
+<canvas id="canvas" class="particles"></canvas>
 
 <div class="text-layer">
     <!--<div class="wait-please">Трансляция начнётся через</div>-->
 
-    <div class="weekday"></div>
+    <div class="weekday animated hidden"></div>
     <div class="timetable"></div>
 
     <img src="logo.png" alt="11th Radio" class="logo">
 
-    <div class="timer">
+    <div class="timer animated hidden">
         <div class="timer--clock">
             <div class="minutes-group clock-display-grp">
                 <div class="first number-grp">
@@ -90,6 +93,7 @@
 
 <script src="../jquery.min.js"></script>
 <script src="timetable.js"></script>
+<script src="particles.js"></script>
 
 </body>
 </html>

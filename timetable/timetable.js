@@ -2,15 +2,19 @@ $(function () {
 
     var date = new Date();
     var weekdays = new Array(7);
-    weekdays[0] = "Monday";
-    weekdays[1] = "Tuesday";
-    weekdays[2] = "Wednesday";
-    weekdays[3] = "Thursday";
-    weekdays[4] = "Friday";
-    weekdays[5] = "Saturday";
-    weekdays[6] = "Sunday";
+    weekdays[0] = "Sunday";
+    weekdays[1] = "Monday";
+    weekdays[2] = "Tuesday";
+    weekdays[3] = "Wednesday";
+    weekdays[4] = "Thursday";
+    weekdays[5] = "Friday";
+    weekdays[6] = "Saturday";
 
     $('.weekday').text(weekdays[date.getDay()])
+
+    setTimeout(function () {
+        $('.weekday').removeClass('hidden')
+    }, 5000);
 
     var timetable = $('.timetable')
 
@@ -35,11 +39,11 @@ $(function () {
     });
 
     $.get('time.txt', function (text) {
-        // TweenLite.defaultEase = Expo.easeOut;
+        setTimeout(function () {
+            $('.timer').removeClass('hidden')
+        }, 5000);
 
         initTimer(text); // other ways --> "0:15" "03:5" "5:2"
-
-        // var timerEl = document.querySelector('.timer');
 
         function initTimer(t) {
 

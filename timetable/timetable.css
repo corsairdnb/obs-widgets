@@ -40,6 +40,20 @@ body {
     -webkit-filter: blur(8px);
     filter: blur(8px);
 }
+.layer-2 {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    -webkit-animation: darken 15s infinite linear;
+    animation: darken 15s infinite linear;
+}
 
 .text-layer {
     z-index: 1;
@@ -77,7 +91,7 @@ body {
 
 .timetable {
     position: absolute;
-    left: 12vh;
+    left: 15vh;
     top: 0;
     bottom: 0;
     margin: auto 0;
@@ -86,7 +100,7 @@ body {
     justify-content: center;
 }
 .timetable__item {
-    font-size: 6.5vh;
+    font-size: 8vh;
     margin: 0 0 .2em;
     transition: all .3s;
 }
@@ -112,6 +126,12 @@ body {
     position: absolute;
     right: 7vh;
     top: 5vh;
+}
+.animated {
+    transition: all .3s;
+}
+.hidden {
+    opacity: 0;
 }
 
 .timer--clock {
@@ -159,4 +179,30 @@ body {
     font-size: 7vh;
     line-height: 0;
     font-weight: bold;
+}
+
+@keyframes darken {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .3;
+    }
+    55% {
+        opacity: .32;
+    }
+    75% {
+        opacity: .05;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.particles {
+    position: relative;
+    z-index: 1111;
 }
