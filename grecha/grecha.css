@@ -1,0 +1,111 @@
+@font-face {
+    font-family: Bluescreens;
+    font-style: normal;
+    font-weight: 400;
+    src: local('TTBluescreens-Regular'), url(../TTBluescreens-Regular.ttf);
+}
+@font-face {
+    font-family: 'Core Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('CoreSansD35Regular'), url(../CoreSansD35Regular.otf);
+}
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Core Sans', sans-serif;
+    font-weight: 400;
+    background-color: #000;
+}
+.layer-1 {
+    background: url('bg.jpg') no-repeat 50% 50% / cover #629b61;
+    background-blend-mode: multiply;
+    width: 105%;
+    height: 105%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
+}
+.layer-2 {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+}
+
+.text-layer {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.logo {
+    position: absolute;
+    height: 11vh;
+    right: 18vw;
+    bottom: 45vh;
+}
+.grecha {
+    position: absolute;
+    height: 14vh;
+    left: 27vw;
+    bottom: 43vh;
+}
+
+.diaface {
+    position: absolute;
+    height: 40vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    animation: rotation 5s infinite;
+    transform: none;
+}
+
+
+@keyframes rotation {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    25% {
+        transform: scale(1.2) translateY(-5px);
+    }
+    50% {
+        transform: scale(1) translateY(0) rotate(0deg);
+    }
+    65% {
+        transform: scale(1.1) translateY(-2px) rotate(360deg);
+    }
+    75% {
+        transform: scale(1.2) translateY(-5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
