@@ -65,9 +65,9 @@ body {
 
 .logo {
     position: absolute;
-    height: 11vh;
-    right: 18vw;
-    bottom: 45vh;
+    height: 13vh;
+    right: 40vw;
+    bottom: 79vh;
 }
 .grecha {
     position: absolute;
@@ -84,8 +84,52 @@ body {
     right: 0;
     top: 0;
     margin: auto;
-    animation: rotation 5s infinite;
     transform: none;
+}
+
+.rotating {
+    animation: rotation 5s infinite;
+}
+
+.fly {
+    animation: bigBoxAnimation 6s linear infinite;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+}
+.fly-1, .fly-2 {
+    animation: boxAnimation 2.95s cubic-bezier(0.02, 0.01, 0.31, 1) infinite;
+}
+.fly-2 {
+    animation: boxAnimation 3.2s cubic-bezier(0.02, 0.01, 0.31, 1) infinite;
+    transform:matrix(-1,0,0,1,0,0);
+}
+.fly-1, .fly-2 {
+    animation:spanAnimation 3s cubic-bezier(0.3, 0.27, 0.07, 1.64) infinite;
+}
+@keyframes bigBoxAnimation {
+    100% {transform:rotate(360deg);}
+}
+@keyframes boxAnimation{
+    50% {transform:translateY(-10vh);}
+}
+@keyframes spanAnimation {
+    50% {transform:translateX(-10vh)}
+}
+
+.wait-please {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18vh;
+    margin: auto;
+    text-align: center;
+    font-size: 3vh;
 }
 
 

@@ -20,4 +20,20 @@ $(function () {
     //     }, 20000);
     // });
 
+    setTimeout(function () {
+        $('.diaface').appendTo('.fly-2');
+    }, 2 * 60 * 1000);
+
+    setTimeout(function () {
+        $('.diaface').insertAfter('.fly');
+    }, 2 * 60 * 1000 + 10000);
+
+    setTimeout(function () {
+        $('.diaface').appendTo('.fly-2');
+    }, 5 * 60 * 1000);
+
+    setTimeout(function () {
+        $('.diaface').insertAfter('.fly');
+    }, 5 * 60 * 1000 + 10000);
+
 });
