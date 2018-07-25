@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Core Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('CoreSansD35Regular'), url(../fonts/core-sans/CoreSansD35Regular.otf);
+}

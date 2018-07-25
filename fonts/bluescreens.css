@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Bluescreens;
+    font-style: normal;
+    font-weight: 400;
+    src: local('TTBluescreens-Regular'), url(../fonts/bluescreens/TTBluescreens-Regular.ttf);
+}
+@font-face {
+    font-family: Bluescreens;
+    font-style: normal;
+    font-weight: 700;
+    src: local('TTBluescreens-Bold'), url(../fonts/bluescreens/TTBluescreens-Bold.ttf);
+}
