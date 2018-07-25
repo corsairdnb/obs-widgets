@@ -1,0 +1,73 @@
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.animated {
+    transition: all 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.bg {
+    width: 200vw;
+    height: 200vh;
+    position: absolute;
+    top: -100vh;
+    left: -100vw;
+    transform: rotate(14deg);
+}
+.layer-1,
+.layer-2 {
+    height: 200%;
+    position: absolute;
+    top: 50vh;
+    left: 50vh;
+    box-shadow: 0 0 1vw 1vw rgba(0,0,0,0.5);
+    transform: translate3d(-3000px,0,0);
+}
+.bounceInLeft {
+    transform: translate3d(0,0,0) !important;
+}
+.layer-1 {
+    background-color: #384837;
+    width: 80%;
+    /*clip-path: polygon(0 0, 100% 0, 84.5% 100%, 0% 100%);*/
+}
+.layer-2 {
+    background-color: #779878;
+    width: 76%;
+    /*clip-path: polygon(0 0, 100% 0, 83% 100%, 0% 100%);*/
+}
+.donation {
+    width: 73vw;
+    position: absolute;
+    left: 4vw;
+    top: 15vh;
+    color: #4C4C4C;
+}
+.donation__header,
+.donation__name,
+.donation__message {
+    transform: translate3d(-3000px,0,0);
+}
+.donation__header {
+    font: 300 8vh/1em 'DIN Pro Cond', sans-serif;
+    margin: 0 0 3vh;
+}
+.donation__header b {
+    font-weight: 600;
+}
+.donation__name {
+    margin: 0 0 5vh;
+    font: 700 9vh/1em 'DIN Pro', sans-serif;
+    text-transform: uppercase;
+}
+.donation__message {
+    font: 300 6vh/1.5em 'DIN Pro Cond', sans-serif;
+    margin: 0 0 0 9vh;
+}
+.shape {
+    width: 12vw;
+    height: 83vh;
+    float: right;
+    shape-outside: polygon(100% 0, 0% 100%, 100% 100%);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}

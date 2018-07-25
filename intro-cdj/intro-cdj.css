@@ -8,7 +8,7 @@
     font-family: 'Core Sans';
     font-style: normal;
     font-weight: 400;
-    src: local('CoreSansD35Regular'), url(../CoreSansD35Regular.otf);
+    src: local('CoreSansD35Regular'), url(../fonts/CoreSansD35Regular.otf);
 }
 html, body {
     min-height: 100%;
