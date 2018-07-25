@@ -4,13 +4,13 @@ html, body {
     overflow: hidden;
 }
 .animated {
-    transition: all 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .bg {
     width: 200vw;
     height: 200vh;
     position: absolute;
-    top: -100vh;
+    top: -200vh;
     left: -100vw;
     transform: rotate(14deg);
 }

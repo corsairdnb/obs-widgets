@@ -92,15 +92,7 @@ $(function () {
         var socket = io('socket.donationalerts.ru:3001', {
             reconnection: true,
             reconnectionDelayMax: 5000,
-            reconnectionDelay: 1000,
-            transports: [
-                'websocket',
-                'flashsocket',
-                'htmlfile',
-                'xhr-polling',
-                'jsonp-polling',
-                'polling'
-            ]
+            reconnectionDelay: 1000
         });
         var token = 'e4UuFIW6uHFm115XZEcf';
 
