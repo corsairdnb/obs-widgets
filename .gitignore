@@ -6,3 +6,5 @@ Thumbs.db
 *.log
 
 node_modules/
+
+donation/token.txt

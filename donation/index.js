@@ -1,7 +1,9 @@
 $(function () {
 
     var queue = [];
+    var socket;
     var isBannerRun = false;
+    var isDonationRun = false;
 
     var CLASS_NAME = 'donation__name';
     var CLASS_AMOUNT = 'donation__amount';
@@ -25,7 +27,7 @@ $(function () {
     main();
 
     function main() {
-        initSocket();
+        connect();
 
         setInterval(function () {
             if (!isBannerRun) {
@@ -34,7 +36,9 @@ $(function () {
         }, DONATE_LOOP_LENGTH);
 
         setInterval(function () {
-            showBanner();
+            if (!isDonationRun) {
+                showBanner();
+            }
         }, BANNER_LOOP_LENGTH);
     }
 
@@ -43,6 +47,7 @@ $(function () {
     }
 
     function showDonation() {
+        isDonationRun = true;
         var text = queue.shift();
         var donation;
         if (typeof text !== 'undefined' && text) {
@@ -86,15 +91,28 @@ $(function () {
         animateOut(CLASS_HEADER, DELAY_PAUSE + DELAY_5);
         animateOut(CLASS_LAYER_1, DELAY_PAUSE + DELAY_5 + DELAY_1);
         animateOut(CLASS_LAYER_2, DELAY_PAUSE + DELAY_5 + DELAY_2);
+
+        setTimeout(function () {
+            isDonationRun = false;
+        }, DELAY_PAUSE + DELAY_1 + DELAY_2 + DELAY_3 + DELAY_4 + DELAY_5);
+    }
+
+    function connect() {
+        $.get('token.txt')
+            .done(function(data) {
+                token = data;
+            })
+            .always(function(data) {
+                initSocket();
+            });
     }
 
     function initSocket() {
-        var socket = io('socket.donationalerts.ru:3001', {
+        socket = io('socket.donationalerts.ru:3001', {
             reconnection: true,
             reconnectionDelayMax: 5000,
             reconnectionDelay: 1000
         });
-        var token = 'e4UuFIW6uHFm115XZEcf';
 
         socket.on('connect', function (msg) {
             console.info('%c WS: connected', 'color: green');
