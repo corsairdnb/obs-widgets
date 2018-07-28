@@ -6,65 +6,98 @@ $(function(){
     var line_1;
     var line_2;
     var artist;
+    var typewriterNow;
+    var typewriterArtist;
+    var delay_1 = 1000;
+    var delay_2 = delay_1 + 1000;
+    var delay_3 = delay_2 + 6000;
+    var delay_4 = delay_3 + 1000;
+    var delay_5 = delay_4 + 1000;
+    var nowText = 'now playing';
+    var artistText = '';
+    var firstLoad = true;
 
-    window.NowBanner = function() {
-        function init() {
-            container = $('<div />', {
-                'class': CLASS_BANNER
-            });
-            line_1 = $('<div />', {
-                'class': CLASS_LINE_1,
-                'html': '<span class="now">now playing</span>'
-            });
-            line_2 = $('<div />', {
-                'class': CLASS_LINE_2
-            });
-            artist = $('<span class="artist"></span>')
-            artist.load('artist.txt');
-            line_2.append(artist);
-            container.append([line_1, line_2]);
-            $('body').prepend(container);
-        }
-        function typewrite() {
-            $('.now').typewrite({
-                'delay': 50,
-                'extra_char': '',
-                'trim': true,
-                'callback': null
-            });
-            
-            setTimeout(function(){
-                $.get('artist.txt')
+    function init() {
+        container = $('<div />', {
+            'class': CLASS_BANNER
+        });
+        line_1 = $('<div />', {
+            'class': CLASS_LINE_1,
+            'html': '<span class="now">'+ nowText +'</span>'
+        });
+        line_2 = $('<div />', {
+            'class': CLASS_LINE_2
+        });
+        artist = $('<span class="artist"></span>')
+        // artist.load('../artist.txt');
+        line_2.append(artist);
+        container.append([line_1, line_2]);
+        $('body').prepend(container);
+    }
+    function typewrite() {
+        typewriterNow = $('.now').typewrite({
+            'delay': 70,
+            'extra_char': '',
+            'trim': true,
+            'callback': function() {
+                $('.now').hide().text(nowText);
+            }
+        });
+        
+        setTimeout(function(){
+            $.get('../artist.txt')
                 .done(function(data) {
-                    artist.text(data);
+                    artist.text(artistText = data);
                 })
                 .always(function() {
-                    artist.typewrite({
-                        'delay': 50,
+                    typewriterArtist = artist.typewrite({
+                        'delay': 40,
                         'extra_char': '',
                         'trim': true,
-                        'callback': null
+                        'callback': function() {
+                            artist.hide().text(artistText);
+                        }
                     });
                 });
-            }, 900);
-        }
-        function animateIn() {
-            
-        }
-        function animateOut() {
-            
-        }
+        }, 900);
+    }
+    function animateIn() {
+        $('.banner__line-1, .banner__line-2').addClass('show');
+    }
+    function animateOut() {
+        $('.banner__line-1, .banner__line-2').removeClass('show');
+    }
 
-        init();
+    window.NowBanner = function() {
+        if (firstLoad) {
+            init();
+            firstLoad = false;
+        }
 
         setTimeout(function(){
             animateIn();
-        }, 100);
+        }, delay_1);
 
         setTimeout(function(){
-            // typewrite();
-        }, 2000);
+            typewrite();
+        }, delay_2);
+
+        setTimeout(function(){
+            typewriterArtist.remove(0);
+        }, delay_3);
+
+        setTimeout(function(){
+            typewriterNow.remove(0);
+        }, delay_4);
+
+        setTimeout(function(){
+            animateOut();
+        }, delay_5);
+
+        setTimeout(function(){
+            window.isBannerRun = false;
+        }, delay_5 + 1000);
     }
 
-    window.NowBanner();
+    // window.NowBanner();
 });

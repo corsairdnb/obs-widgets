@@ -2,8 +2,6 @@ $(function () {
 
     var queue = [];
     var socket;
-    var isBannerRun = false;
-    var isDonationRun = false;
 
     var CLASS_NAME = 'donation__name';
     var CLASS_AMOUNT = 'donation__amount';
@@ -29,25 +27,31 @@ $(function () {
     function main() {
         connect();
 
+        setTimeout(function () {
+            showBanner();
+        }, 1000);
+
         setInterval(function () {
-            if (!isBannerRun) {
+            if (!window.isBannerRun) {
                 showDonation();
             }
         }, DONATE_LOOP_LENGTH);
 
         setInterval(function () {
-            if (!isDonationRun) {
+            if (!window.isDonationRun) {
                 showBanner();
             }
         }, BANNER_LOOP_LENGTH);
     }
 
     function showBanner() {
-        isBannerRun = true;
+        window.isBannerRun = true;
+        window.NowBanner();
     }
+    window.showBanner
 
     function showDonation() {
-        isDonationRun = true;
+        window.isDonationRun = true;
         var text = queue.shift();
         var donation;
         if (typeof text !== 'undefined' && text) {
@@ -93,7 +97,7 @@ $(function () {
         animateOut(CLASS_LAYER_2, DELAY_PAUSE + DELAY_5 + DELAY_2);
 
         setTimeout(function () {
-            isDonationRun = false;
+            window.isDonationRun = false;
         }, DELAY_PAUSE + DELAY_1 + DELAY_2 + DELAY_3 + DELAY_4 + DELAY_5);
     }
 
@@ -145,6 +149,7 @@ $(function () {
         }
     }
 
+    // window.showDonation = run.bind(this, 'a', 'b', 'c');
 });
 
 
