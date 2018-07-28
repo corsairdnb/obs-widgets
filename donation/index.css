@@ -3,6 +3,9 @@ html, body {
     height: 100vh;
     overflow: hidden;
 }
+body {
+    margin: 0;
+}
 .animated {
     transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
 }

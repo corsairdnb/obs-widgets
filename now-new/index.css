@@ -1,0 +1,48 @@
+html {
+    font-size: 1vh;
+}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+body {
+    margin: 0;
+}
+.animated {
+    transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.banner {
+    position: absolute;
+    right: 3vw;
+    bottom: 30vh;
+    width: 100%;
+}
+.banner__line-1 {
+    position: absolute;
+    right: 28vw;
+    top: 0;
+    padding: .5rem 0 1.2rem 0;
+    font: 3.5rem/1em 'Din Pro', sans-serif;
+    height: 1em;
+    background-color: #4d4d4d;
+    color: #fff;
+    z-index: 1;
+    text-indent: 2rem;
+    min-width: 18vw;
+}
+.banner__line-2 {
+    width: 45vw;
+    height: 7rem;
+    position: absolute;
+    padding: 3rem 0 0 0;
+    left: 55vw;
+    top: 3.5rem;
+    font: 600 4.5rem/1.5em 'Din Pro Cond', sans-serif;
+    background-color: #6b996c;
+    color: #4f504e;
+    text-indent: 2rem;
+}
+.now, .artist {
+    display: none;
+}
