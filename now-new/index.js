@@ -9,13 +9,14 @@ $(function(){
     var typewriterNow;
     var typewriterArtist;
     var delay_1 = 1000;
-    var delay_2 = delay_1 + 1000;
+    var delay_2 = delay_1 + 500;
     var delay_3 = delay_2 + 6000;
-    var delay_4 = delay_3 + 1000;
-    var delay_5 = delay_4 + 1000;
+    var delay_4 = delay_3 + 500;
+    var delay_5 = delay_4 + 500;
     var nowText = 'now playing';
     var artistText = '';
     var firstLoad = true;
+    window.isBannerRun = false;
 
     function init() {
         container = $('<div />', {
@@ -36,7 +37,7 @@ $(function(){
     }
     function typewrite() {
         typewriterNow = $('.now').typewrite({
-            'delay': 70,
+            'delay': 65,
             'extra_char': '',
             'trim': true,
             'callback': function() {
@@ -51,7 +52,7 @@ $(function(){
                 })
                 .always(function() {
                     typewriterArtist = artist.typewrite({
-                        'delay': 40,
+                        'delay': 50,
                         'extra_char': '',
                         'trim': true,
                         'callback': function() {

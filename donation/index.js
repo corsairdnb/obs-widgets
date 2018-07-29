@@ -22,6 +22,9 @@ $(function () {
     var DONATE_LOOP_LENGTH = ANIMATION_LENGTH + LOOP_GAP;
     var BANNER_LOOP_LENGTH = 1000 * 60 * 3; // 3 minutes
 
+    window.isBannerRun = false;
+    window.isDonationRun = false;
+
     main();
 
     function main() {
@@ -32,7 +35,7 @@ $(function () {
         }, 1000);
 
         setInterval(function () {
-            if (!window.isBannerRun) {
+            if (!window.isBannerRun && queue.length) {
                 showDonation();
             }
         }, DONATE_LOOP_LENGTH);
@@ -48,7 +51,6 @@ $(function () {
         window.isBannerRun = true;
         window.NowBanner();
     }
-    window.showBanner
 
     function showDonation() {
         window.isDonationRun = true;
