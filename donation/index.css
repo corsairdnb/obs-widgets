@@ -40,7 +40,8 @@ body {
     /*clip-path: polygon(0 0, 100% 0, 83% 100%, 0% 100%);*/
 }
 .donation {
-    width: 73vw;
+    /*width: 73vw;*/
+    width: 60vw;
     position: absolute;
     left: 4vw;
     top: 15vh;

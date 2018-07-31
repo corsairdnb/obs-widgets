@@ -24,6 +24,7 @@ $(function () {
 
     window.isBannerRun = false;
     window.isDonationRun = false;
+    window.Donate = run;
 
     main();
 
