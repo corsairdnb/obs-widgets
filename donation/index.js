@@ -15,7 +15,7 @@ $(function () {
     var DELAY_3 = 1400;
     var DELAY_4 = 1500;
     var DELAY_5 = 1600;
-    var DELAY_PAUSE = 8000;
+    var DELAY_PAUSE = 12000;
     var LOOP_GAP = 1000;
 
     var ANIMATION_LENGTH = DELAY_1 + DELAY_2 + DELAY_3 + DELAY_4 + DELAY_5 + DELAY_PAUSE;
