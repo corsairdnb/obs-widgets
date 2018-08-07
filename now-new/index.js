@@ -9,7 +9,7 @@ $(function(){
     var typewriterNow;
     var typewriterArtist;
     var delay_1 = 1000;
-    var delay_2 = delay_1 + 500;
+    var delay_2 = delay_1 + 1000;
     var delay_3 = delay_2 + 6000;
     var delay_4 = delay_3 + 500;
     var delay_5 = delay_4 + 500;

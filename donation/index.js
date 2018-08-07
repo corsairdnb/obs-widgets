@@ -64,7 +64,7 @@ $(function () {
         if (typeof donation !== 'undefined' && donation) {
             run(
                 donation['username'],
-                donation['amount_formatted'] + ' ' + donation['currency'],
+                donation['amount'] + ' ' + donation['currency'],
                 donation['message']
             );
         }
@@ -123,7 +123,7 @@ $(function () {
 
         socket.on('connect', function (msg) {
             console.info('%c WS: connected', 'color: green');
-            socket.emit('add-user', {token: token, type: 'alert_widget'});
+            socket.emit('add-user', {token: token, type: 'minor'});
         });
 
         socket.on('connect_error', function (msg) {
@@ -139,6 +139,8 @@ $(function () {
         });
 
         socket.on('donation', function (msg) {
+            console.log(msg);
+            console.log(JSON.parse(msg));
             enqueue(msg);
         });
     }
