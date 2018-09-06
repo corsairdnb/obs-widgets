@@ -108,6 +108,7 @@ body {
     line-height: 1em;
     letter-spacing: .3vh;
     text-transform: uppercase;
+    visibility: hidden !important;
 }
 .timer {
     display: block;

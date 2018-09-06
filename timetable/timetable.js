@@ -125,6 +125,9 @@ $(function () {
             setTimeout(function(){
                 $('.layer-1, .text-layer').addClass('animated fadeOut');
             }, 1000);
+            setTimeout(function(){
+                $('.particles').hide();
+            }, 3000);
         }
 
     });
