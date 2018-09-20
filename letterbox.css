@@ -1,0 +1,19 @@
+body {
+    position: relative;
+    background: url("screenshot.jpg") no-repeat 0 0 / cover;
+}
+body:before,
+body:after {
+    content: '';
+    background: red;
+    width: 100%;
+    height: 13%;
+    position: absolute;
+    left: 0;
+}
+body:before {
+    top: 0;
+}
+body:after {
+    bottom: 0;
+}
