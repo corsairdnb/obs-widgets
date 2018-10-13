@@ -1,0 +1,33 @@
+.animated {
+    transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.bounceInLeft {
+    transform: translate3d(0,0,0) !important;
+}
+.info {
+    width: 57vw;
+    position: absolute;
+    left: 0;
+    bottom: 16vh;
+    padding: 2vh 2vw 2.5vh 6vw;
+    color: #4C4C4C;
+    background: #a1b38f url('texture.jpg');
+    background-blend-mode: multiply;
+    transform: translate3d(-3000px,0,0);
+}
+.info:before {
+    content: '';
+    background: url("info.png") no-repeat 0 0;
+    background-size: cover;
+    position: absolute;
+    left: 2.5vw;
+    top: 3vh;
+    width: 1.5vw;
+    height: 11vh;
+}
+.info__header {
+    font: 300 5.5vh/1.2em 'DIN Pro Cond', sans-serif;
+}
+.info__message {
+    font: 700 5vh/1.2em 'DIN Pro', sans-serif;
+}

@@ -59,19 +59,12 @@ $(function () {
         $('.' + CLASS_AMOUNT).text(amount);
         $('.' + CLASS_MESSAGE).text(message);
 
-        animateIn(CLASS_DONATION, window.DONATE_DELAY_1);
-        // animateIn(CLASS_HEADER, window.DONATE_DELAY_3);
-        // animateIn(CLASS_NAME, window.DONATE_DELAY_4);
-        // animateIn(CLASS_MESSAGE, window.DONATE_DELAY_5);
-
-        // animateOut(CLASS_MESSAGE, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY_3);
-        // animateOut(CLASS_NAME, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY_4);
-        // animateOut(CLASS_HEADER, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY_5);
-        // animateOut(CLASS_LAYER_1, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY_5 + window.DONATE_DELAY_1);
+        animateIn(CLASS_DONATION, window.DONATE_DELAY);
+        animateOut(CLASS_DONATION, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY);
 
         setTimeout(function () {
             window.isDonationRun = false;
-        }, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY_1 + window.DONATE_DELAY_2 + window.DONATE_DELAY_3 + window.DONATE_DELAY_4 + window.DONATE_DELAY_5);
+        }, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY);
     }
 
     function connect() {
@@ -115,5 +108,4 @@ $(function () {
         });
     }
 
-    run('ANZHELIKA ROZHDESTVENSKAYA', '100 RUB', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at beatae corporis debitis');
 });

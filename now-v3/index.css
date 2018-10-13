@@ -10,7 +10,7 @@
     position: absolute;
     padding: 0 0 8vw 0;
     right: 0;
-    bottom: 30vh;
+    bottom: 16vh;
     overflow: hidden;
     background: #85A896 url('texture.jpg');
     background-blend-mode: multiply;
