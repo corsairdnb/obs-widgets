@@ -63,10 +63,10 @@ $(function(){
         }, 900);
     }
     function animateIn() {
-        $('.banner__line-1, .banner__line-2').addClass('show');
+        $('.banner__line-1, .banner__bg').addClass('show');
     }
     function animateOut() {
-        $('.banner__line-1, .banner__line-2').removeClass('show');
+        $('.banner__line-1, .banner__bg').removeClass('show');
     }
 
     window.NowBanner = function() {

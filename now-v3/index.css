@@ -1,67 +1,56 @@
-* {
-    box-sizing: border-box;
-}
-html {
-    font-size: 1vh;
-}
-html, body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-body {
-    margin: 0;
-}
 .banner {
     position: absolute;
     right: 0;
     bottom: 0;
     width: 100%;
 }
-.banner__line-2 {
+.banner__bg {
     width: 70vw;
     height: 8vw;
     position: absolute;
-    padding: 0 0 8vw 25vw;
+    padding: 0 0 8vw 0;
     right: 0;
     bottom: 30vh;
-    font: 600 3.4vw/1.5em 'Din Pro Cond', sans-serif;
-    background-color: #6b996c;
+    overflow: hidden;
+    background: #85A896 url('texture.jpg');
+    background-blend-mode: multiply;
     color: #4f504e;
-    text-indent: 2rem;
     /* box-shadow: 1px 1px 2px rgba(255,255,255,.3), 2px 2px 7px rgba(0,0,0,0.3); */
     transition: transform 1s .3s ease-in-out;
     transform: translateX(70.1vw);
 }
-.banner__line-2.show {
+.banner__bg.show {
     transform: translateX(0);
     transition-delay: 0s;
 }
-/* .now, .artist {
-    display: none;
-} */
 
+.artist {
+    font: 700 3.4vw/1.5em 'Din Pro Cond', sans-serif;
+}
 .logo {
-    position: absolute;
     left: 0;
     top: 0;
-    width: 15vw;
-    height: 100%;
-    background-color: #64cc66;
+    width: 14vw;
+    height: 8vw;
+    background: #738F82 url('texture.jpg');
+    background-blend-mode: multiply;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
 }
 .logo img {
     position: absolute;
-    max-width: 80%;
+    max-width: 75%;
     max-height: 78%;
     object-fit: contain;
-    left: 1.1vw;
-    top: 1vw;
+    left: 1.5vw;
+    top: 1.2vw;
 }
 .dj {
-    position: absolute;
-    left: 16vw;
-    top: 1.2vw;
+    margin: 1.3vw 0 0 2vw;
     width: 7vw;
-    height: 6vw;
+    height: 5.5vw;
     background: url('dj.png') no-repeat 0 0 / contain;
+    display: inline-block;
+    vertical-align: top;
 }
