@@ -28,6 +28,10 @@ $(function () {
                     donation['message']
                 );
             }
+
+            setTimeout(function () {
+                window.isDonationRun = false;
+            }, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY);
         }
     };
 
@@ -61,10 +65,6 @@ $(function () {
 
         animateIn(CLASS_DONATION, window.DONATE_DELAY);
         animateOut(CLASS_DONATION, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY);
-
-        setTimeout(function () {
-            window.isDonationRun = false;
-        }, window.DONATE_DELAY_PAUSE + window.DONATE_DELAY);
     }
 
     function connect() {

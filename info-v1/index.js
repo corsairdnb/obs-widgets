@@ -44,8 +44,10 @@ $(function () {
                 message_text = $.trim(parts[1]);
             })
             .always(function () {
-                $('.' + CLASS_HEADER).text(header_text);
-                $('.' + CLASS_MESSAGE).text(message_text);
+                if (header_text !== '' && message_text !== '') {
+                    $('.' + CLASS_MESSAGE).text(message_text);
+                    $('.' + CLASS_HEADER).text(header_text);
+                }
             });
 
         animateIn(CLASS_INFO, INFO_DELAY);
