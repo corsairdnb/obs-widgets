@@ -31,6 +31,8 @@ $(function(){
                 artist.text(artistText);
                 if (programLogo) {
                     logo = $('<div class="logo"><img src="../logo/'+programLogo+'.png" /></div>');
+                } else {
+                    logo = $('<div class="logo"><img src="../logo/logo.png" /></div>');
                 }
             })
             .always(function() {
