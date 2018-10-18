@@ -7,7 +7,6 @@ $(function () {
     var CLASS_NAME = 'donation__name';
     var CLASS_AMOUNT = 'donation__amount';
     var CLASS_MESSAGE = 'donation__message';
-    var CLASS_HEADER = 'donation__header';
 
     initTemplate();
     connect();
