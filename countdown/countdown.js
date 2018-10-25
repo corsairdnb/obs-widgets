@@ -1,6 +1,6 @@
 $(function () {
 
-    $.get('time.txt', function (text) {
+    $.get('../time.txt', function (text) {
         // TweenLite.defaultEase = Expo.easeOut;
 
         initTimer(text); // other ways --> "0:15" "03:5" "5:2"

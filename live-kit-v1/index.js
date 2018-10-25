@@ -13,8 +13,8 @@ $(function () {
 
     var ANIMATION_LENGTH = DONATE_DELAY + DONATE_DELAY_PAUSE;
     var DONATE_LOOP_LENGTH = ANIMATION_LENGTH + LOOP_GAP;
-    var DJ_BANNER_LOOP_LENGTH = 1000 * 60 * 4; // 4 minutes
-    var INFO_BANNER_LOOP_LENGTH = 1000 * 60 * 7; // 7 minutes
+    var DJ_BANNER_LOOP_LENGTH = 1000 * 60 * 3; // 4 minutes
+    var INFO_BANNER_LOOP_LENGTH = 1000 * 60 * 6; // 6 minutes
 
     main();
 

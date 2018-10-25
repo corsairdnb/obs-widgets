@@ -18,7 +18,7 @@ $(function () {
 
     var timetable = $('.timetable')
 
-    $.get('timetable.txt', function (text) {
+    $.get('../timetable.txt', function (text) {
         if (!text) return;
 
         text.split('\n').forEach(function (item) {
@@ -38,7 +38,7 @@ $(function () {
         }, 20000);
     });
 
-    $.get('time.txt', function (text) {
+    $.get('../time.txt', function (text) {
         setTimeout(function () {
             $('.timer').removeClass('hidden')
         }, 5000);
