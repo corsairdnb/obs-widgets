@@ -19,12 +19,15 @@
 }
 
 .artist {
-    font: 700 3.4vw/1.5em 'Din Pro Cond', sans-serif;
+    font: 700 3.4vw/1em 'Din Pro Cond', sans-serif;
+    margin: .7vw 0 0;
+    display: inline-block;
+    white-space: nowrap;
 }
 .logo {
     left: 0;
     top: 0;
-    width: 14vw;
+    width: 18vw;
     height: 8vw;
     background: #738F82 url('texture.jpg');
     background-blend-mode: multiply;
@@ -34,17 +37,15 @@
 }
 .logo img {
     position: absolute;
-    max-width: 75%;
-    max-height: 75%;
+    max-width: 82%;
+    max-height: 72%;
     object-fit: contain;
-    left: 1.5vw;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
+    left: 1.25vw;
+    top: 1.1vw;
 }
 .dj {
-    margin: 1.3vw 0 0 2vw;
-    width: 7vw;
+    margin: 1vw 0 0 2.5vw;
+    width: 6.5vw;
     height: 5.5vw;
     background: url('dj.png') no-repeat 0 0 / contain;
     display: inline-block;
