@@ -38,7 +38,7 @@ $(function(){
                 if (programLogo) {
                     $('.'+CLASS_LOGO).find('img').attr('src', '../logo/'+programLogo+'.png');
                 } else {
-                    $('.'+CLASS_LOGO).find('img').attr('src', '');
+                    $('.'+CLASS_LOGO).find('img').attr('src', '../logo/logo.png');
                 }
             });
 
