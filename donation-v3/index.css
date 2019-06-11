@@ -1,0 +1,28 @@
+.animated {
+    transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.bounceInLeft {
+    transform: translate3d(0,0,0) !important;
+}
+.donation {
+    width: 57vw;
+    position: absolute;
+    left: 0;
+    bottom: 16vh;
+    padding: 2vh 2vw 4vh 2.2vw;
+    color: #4C4C4C;
+    background: #80a080 url('texture.jpg');
+    background-blend-mode: multiply;
+    transform: translate3d(-3000px,0,0);
+}
+.donation__header {
+    font: 300 6vh/1.2em 'DIN Pro Cond', sans-serif;
+}
+.donation__name {
+    margin: 0 0 3vh;
+    font: 700 5.5vh/1.2em 'DIN Pro', sans-serif;
+    text-transform: uppercase;
+}
+.donation__message {
+    font: 300 4.5vh/1.2em 'DIN Pro', sans-serif;
+}
