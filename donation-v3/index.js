@@ -102,7 +102,7 @@ $(function () {
         $.get(url)
             .done(function (response) {
                 var data = response.data;
-                if (data.length === 0) {
+                if (!data || data.length === 0) {
                     promise.resolve();
                     return;
                 }
