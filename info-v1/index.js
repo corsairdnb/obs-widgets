@@ -7,7 +7,7 @@ $(function () {
     var CLASS_MESSAGE = 'info__message';
 
     var INFO_DELAY = 100;
-    var INFO_DELAY_PAUSE = 7500;
+    var INFO_DELAY_PAUSE = 10000;
 
     initTemplate();
 
