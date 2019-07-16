@@ -15,3 +15,4 @@ Available widgets:
 * [Now playing](http://corsairdnb.github.io/obs-widgets/now)
 * [Countdown](http://corsairdnb.github.io/obs-widgets/countdown)
 * [Timetable](http://corsairdnb.github.io/obs-widgets/timetable)
+* [Live kit](http://corsairdnb.github.io/obs-widgets/live-kit-v2)
