@@ -1,0 +1,231 @@
+html, body {
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Exo2', sans-serif;
+    font-weight: 300;
+    background-color: #000;
+}
+.layer-1 {
+    background: url('//11thradio.com/static/timetable.jpg') no-repeat 50% 50% / cover;
+    background-color: #629b61;
+    background-blend-mode: multiply;
+    width: 105%;
+    height: 105%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
+}
+.layer-1:not(.animated) {
+    -webkit-animation: rainbow forwards linear;
+    animation: rainbow forwards linear;
+}
+.layer-2 {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    -webkit-animation: darken 15s infinite linear;
+    animation: darken 15s infinite linear;
+}
+
+.text-layer {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.logo {
+    position: absolute;
+    height: 11vh;
+    right: 5vh;
+    bottom: 5vh;
+}
+
+
+
+.wait-please {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 33vh;
+    margin: auto;
+    text-align: center;
+    font-size: 3.5vh;
+    text-transform: uppercase;
+    letter-spacing: .8vh;
+    background: linear-gradient(to right, rgba(41, 140, 5, 0) 20%, #298c05, rgba(41, 140, 5, 0) 80%);
+    padding: 3vh 0;
+    z-index: 100;
+}
+
+.timetable {
+    position: absolute;
+    left: 11vh;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.timetable__item {
+    display: flex;
+    font-size: 7vh;
+    margin: 0 0 .1em;
+    transition: all 2s;
+    padding: 0 29vh 0 0;
+}
+.timetable__item.animated,
+.timetable b {
+    color: #88c587;
+    display: flex;
+}
+.timetable__item.blurred {
+    -webkit-filter: blur(50px);
+    filter: blur(50px);
+}
+
+.timetable b {
+    font-family: 'Core Sans', sans-serif;
+    margin-top: 0.4vh;
+}
+.timetable span {
+    margin-left: 2vh;
+}
+
+
+
+.weekday {
+    display: block;
+    position: absolute;
+    right: 7vh;
+    top: 5vh;
+    font-size: 2vh;
+    line-height: 1em;
+    letter-spacing: .3vh;
+    text-transform: uppercase;
+    visibility: hidden !important;
+}
+.timer {
+    display: block;
+    position: absolute;
+    right: 7vh;
+    top: 5vh;
+    font-family: 'Core Sans', sans-serif;
+}
+.animated {
+    transition: all .3s;
+}
+.hidden {
+    opacity: 0;
+}
+
+.timer--clock {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.clock-display-grp {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.clock-display-grp .number-grp {
+    width: auto;
+    display: inline-block;
+    height: 10vh;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.clock-display-grp .number-grp .number-grp-wrp {
+    width: 100%;
+    position: relative;
+    -webkit-transition: -webkit-transform 0s ease-out;
+    transition: transform 0s ease-out;
+}
+
+.clock-display-grp .number-grp .number-grp-wrp .num {
+    width: 100%;
+    position: relative;
+    height: 10vh;
+}
+
+.clock-separator {
+    width: auto;
+    vertical-align: top;
+    display: inline-block;
+    height: 10vh;
+}
+
+.num, .clock-separator {
+    font-size: 6vh;
+    line-height: 0;
+    font-weight: bold;
+}
+
+@keyframes darken {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .3;
+    }
+    55% {
+        opacity: .32;
+    }
+    75% {
+        opacity: .05;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.particles {
+    position: relative;
+    z-index: 1111;
+}
+
+@keyframes rainbow {
+    0% {
+        background-color: #39833e;
+        -webkit-filter: blur(10px);
+        filter: blur(10px);
+    }
+    100% {
+        background-color: #449b49;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+    }
+}

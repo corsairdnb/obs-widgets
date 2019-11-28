@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Exo2';
+    font-style: normal;
+    font-weight: 300;
+    src: url(../fonts/exo2/Exo2-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Exo2';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/exo2/Exo2-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Exo2';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/exo2/Exo2-Bold.ttf);
+}
