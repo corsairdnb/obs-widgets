@@ -16,7 +16,10 @@ $(function () {
         $('.weekday').removeClass('hidden')
     }, 5000);
 
-    var timetable = $('.timetable')
+    var timetable = $('.timetable');
+    var particles = $('.particles');
+
+    var gif = $('#layer-gif');
 
     $.get('../timetable.txt', function (text) {
         if (!text) return;
@@ -125,11 +128,26 @@ $(function () {
             setTimeout(function(){
                 $('.layer-1, .text-layer').addClass('animated fadeOut');
                 $('.timetable__item').addClass('blurred');
+                gif.hide();
             }, 1000);
             setTimeout(function(){
-                $('.particles').hide();
+                particles.hide();
             }, 4000);
         }
 
+        function randomInteger(min, max) {
+            let rand = min - 0.5 + Math.random() * (max - min + 1);
+            return Math.round(rand);
+        }
+
+        setInterval(function () {
+            gif.attr('class', 'layer-gif--' + randomInteger(1, 4));
+            particles.hide();
+        }, 36000);
+
+        setInterval(function () {
+            gif.attr('class', '');
+            particles.show();
+        }, 36400);
     });
 });
