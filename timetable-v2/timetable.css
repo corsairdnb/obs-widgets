@@ -66,6 +66,13 @@ body {
     margin: auto;
 }
 
+.noise .text-layer {
+    background: url(gif/4.gif) no-repeat 0 0 / cover;
+    -webkit-background-clip: text;
+    color: rgb(0, 255, 21);
+    mix-blend-mode: overlay;
+}
+
 .logo {
     position: absolute;
     height: 11vh;
@@ -99,6 +106,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: #fff;
 }
 .timetable__item {
     display: flex;
@@ -223,6 +231,10 @@ body {
 .particles {
     position: relative;
     z-index: 1111;
+}
+
+.noise .particles {
+    display: none;
 }
 
 @keyframes rainbow {

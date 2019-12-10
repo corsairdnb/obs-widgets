@@ -18,6 +18,8 @@ $(function () {
 
     var timetable = $('.timetable');
     var particles = $('.particles');
+    var layer1 = $('.layer-1');
+    var body = $('body');
 
     var gif = $('#layer-gif');
 
@@ -142,12 +144,14 @@ $(function () {
 
         setInterval(function () {
             gif.attr('class', 'layer-gif--' + randomInteger(1, 4));
-            particles.hide();
-        }, 36000);
+            layer1.addClass('variation-' + randomInteger(1, 3));
+            body.addClass('noise');
+        }, 60000);
 
         setInterval(function () {
             gif.attr('class', '');
-            particles.show();
-        }, 36400);
+            layer1.removeClass('variation-1 variation-2 variation-3');
+            body.removeClass('noise');
+        }, 60250);
     });
 });
