@@ -38,8 +38,8 @@ body {
 }
 
 .layer-1:not(.animated) {
-    -webkit-animation: rainbow 60s forwards linear;
-    /* animation: rainbow 60s forwards linear; */
+    -webkit-animation: rainbow 50s forwards linear;
+    animation: rainbow 50s forwards linear;
 }
 .layer-2 {
     background-color: #000;
@@ -239,7 +239,7 @@ body {
 
 @keyframes rainbow {
     0% {
-        background-color: #326832;
+        background-color: #347934;
         -webkit-filter: blur(12px);
         filter: blur(12px);
     }
