@@ -146,12 +146,12 @@ $(function () {
             gif.attr('class', 'layer-gif--' + randomInteger(1, 4));
             layer1.addClass('variation-' + randomInteger(1, 3));
             body.addClass('noise');
-        }, 35000);
+        }, 28000);
 
         setInterval(function () {
             gif.attr('class', '');
             layer1.removeClass('variation-1 variation-2 variation-3');
             body.removeClass('noise');
-        }, 35250);
+        }, 28280);
     });
 });
