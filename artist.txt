@@ -20,6 +20,7 @@ kitchen
 logo
 neurosphere
 new
+norules
 nuke
 province
 pulse
