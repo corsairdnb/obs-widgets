@@ -1,42 +1,46 @@
-TECHNICAL ITCH and NOISIA
-integration
+TINKYTYN
+frontend
 __________
 
 1dnb
 2deep
 audio
-bass
-boom
-boombap
+bass 				(Bass Addiction)
+boom 				(Boom Selecta)
+boombap 			(Boombap Masterz)
 breakpoint
 bullets
-citate
+citate 				(Citate Forms)
 codered
-dirty
-drop
-energy
-fat
-hybrid
-ibwt
+dirty 				(Dirty Tactics)
+drop 				(Drop Dealerz)
+energy 				(Bass Energy)
+fat 				(Fat Vibez)
+frontend
+hybrid 				(Hybrid Funk System)
+ibwt 				(In Beat We Trust)
 integration
-kitchen
-logo
-neural
+kitchen 			(Kitchen of Drums)
+logo 				(11th Radio)
+neural 				(Нейросеть)
 neurosphere
-new
+new 				(Новые Формы)
 norules
-nuke
+nuke 				(Nuke Lab)
+primitive
 province
 pulse
-rampa
+rampa 				(Rampa Trash)
 resense
-sorry
+sorry 				(Sorry Not Sorry)
 stratosphere
-technology
-ton
+technology 			(Технология Прошлого)
+ton 				(Timeofnight)
+underwater			(Underwater)
 urban
 vibe
 welovednb
-wicked
-wickedsound
+wil
+wicked 				(Wicked Wicked)
+wickedsound 		(Wicked Sound)
 xtra
