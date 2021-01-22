@@ -110,10 +110,10 @@ body {
 }
 .timetable__item {
     display: flex;
-    font-size: 7.5vh;
+    font-size: 6.5vh;
     transition: all 2s;
     padding: 0 29vh 0 0;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1em;
 }
 .timetable__item.animated,
@@ -130,7 +130,7 @@ body {
     margin-top: 0.4vh;
 }
 .timetable span {
-    margin-left: 1vh;
+    margin-left: 0.5vh;
 }
 
 .timetable i b {
