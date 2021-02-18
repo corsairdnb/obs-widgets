@@ -13,7 +13,7 @@ body {
     background-color: #000;
 }
 .layer-1 {
-    background: url('S:\\static\\timetable.jpg') no-repeat 50% 50% / cover;
+    background: url('bg.jpg') no-repeat 50% 50% / cover;
     background-color: #629b61;
     background-blend-mode: multiply;
     width: 100%;

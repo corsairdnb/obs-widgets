@@ -1,5 +1,5 @@
-SPOT
-ondawheelz
+CORSAIR
+integration
 -----------
 
 1dnb
@@ -7,6 +7,7 @@ ondawheelz
 2deep
 audio
 bass 				(Bass Addiction)
+bassmymass
 boom 				(Boom Selecta)
 boombap 			(Boombap Masterz)
 breakpoint
@@ -24,6 +25,7 @@ ibwt 				(In Beat We Trust)
 integration
 kitchen 			(Kitchen of Drums)
 logo 				(11th Radio)
+modul8
 neural 				(Нейросеть)
 neurosphere
 new 				(Новые Формы)
