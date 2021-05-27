@@ -1,11 +1,12 @@
-CORSAIR
-integration
+EMPTYDOT
+primitive
 -----------
 
 1dnb
 180
 2deep
 audio
+audioboutique
 bass 				(Bass Addiction)
 bassmymass
 boom 				(Boom Selecta)
@@ -36,6 +37,7 @@ primitive
 province
 pulse
 rampa 				(Rampa Trash)
+res 				(Residents)
 resense
 sorry 				(Sorry Not Sorry)
 stratosphere
@@ -45,7 +47,7 @@ underwater			(Underwater)
 urban
 vibe
 welovednb
-wil
+wil					(what_i_listen)
 wicked 				(Wicked Wicked)
 wickedsound 		(Wicked Sound)
 xtra
