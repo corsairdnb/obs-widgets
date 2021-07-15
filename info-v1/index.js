@@ -50,8 +50,10 @@ $(function () {
                 }
             });
 
-        animateIn(CLASS_INFO, INFO_DELAY);
-        animateOut(CLASS_INFO, INFO_DELAY_PAUSE + INFO_DELAY);
+        if (header_text !== '' && message_text !== '') {
+            animateIn(CLASS_INFO, INFO_DELAY);
+            animateOut(CLASS_INFO, INFO_DELAY_PAUSE + INFO_DELAY);
+        }
 
         setTimeout(function () {
             window.isInfoRun = false;
