@@ -1,5 +1,5 @@
-EMPTYDOT
-primitive
+CORSAIR
+integration
 -----------
 
 1dnb
@@ -19,9 +19,11 @@ dirty 				(Dirty Tactics)
 drop 				(Drop Dealerz)
 energy 				(Bass Energy)
 fat 				(Fat Vibez)
+fly					(Fly)
 fluid				(Fluid Melodies)
 frontend
 hybrid 				(Hybrid Funk System)
+htr					(Happy True Friends)
 ibwt 				(In Beat We Trust)
 integration
 kitchen 			(Kitchen of Drums)
