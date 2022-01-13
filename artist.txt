@@ -1,6 +1,6 @@
-CORSAIR
-integration
------------
+SPOT
+ondawheelz
+----------
 
 1dnb
 180
@@ -22,13 +22,17 @@ fat 				(Fat Vibez)
 fly					(Fly)
 fluid				(Fluid Melodies)
 frontend
+funkyou             (Funk You)
 hybrid 				(Hybrid Funk System)
 htr					(Happy True Friends)
 ibwt 				(In Beat We Trust)
 integration
 kitchen 			(Kitchen of Drums)
-logo 				(11th Radio)
+logo 
+meat 				(Meatheadz)	
+midair
 modul8
+move				(Move to the Rhythm)
 neural 				(Нейросеть)
 neurosphere
 new 				(Новые Формы)
