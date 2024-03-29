@@ -19,92 +19,32 @@ $(function () {
     });
 
     $.get('../time.txt', function (text) {
-        setTimeout(function () {
-            $('.timer').removeClass('hidden')
-        }, 5000);
-
-        initTimer(text); // other ways --> "0:15" "03:5" "5:2"
-
-        function initTimer(t) {
-
-            var self = this,
-                timerEl = document.querySelector('.timer'),
-                minutesGroupEl = timerEl.querySelector('.minutes-group'),
-                secondsGroupEl = timerEl.querySelector('.seconds-group'),
-
-                minutesGroup = {
-                    firstNum: minutesGroupEl.querySelector('.first'),
-                    secondNum: minutesGroupEl.querySelector('.second')
-                },
-
-                secondsGroup = {
-                    firstNum: secondsGroupEl.querySelector('.first'),
-                    secondNum: secondsGroupEl.querySelector('.second')
-                };
-
-            var time = {
-                min: t.split(':')[0],
-                sec: t.split(':')[1]
-            };
-
-            var timeNumbers;
-
-            function updateTimer() {
-
-                var timestr;
-                var date = new Date();
-
-                date.setHours(0);
-                date.setMinutes(time.min);
-                date.setSeconds(time.sec);
-
-                var newDate = new Date(date.valueOf() - 1000);
-                var temp = newDate.toTimeString().split(" ");
-                var tempsplit = temp[0].split(':');
-
-                time.min = tempsplit[1];
-                time.sec = tempsplit[2];
-
-                timestr = time.min + time.sec;
-                timeNumbers = timestr.split('');
-                updateTimerDisplay(timeNumbers);
-
-                if (timestr === '0000')
-                    countdownFinished();
-
-                if (timestr != '0000')
-                    setTimeout(updateTimer, 1000);
-
-            }
-
-            function updateTimerDisplay(arr) {
-
-                animateNum(minutesGroup.firstNum, arr[0]);
-                animateNum(minutesGroup.secondNum, arr[1]);
-                animateNum(secondsGroup.firstNum, arr[2]);
-                animateNum(secondsGroup.secondNum, arr[3]);
-
-            }
-
-            function animateNum(group, arrayValue) {
-                $(group).find('.number-grp-wrp').css('-webkit-transform', 'translate3d(0,' + -group.querySelector('.num-' + arrayValue).offsetTop + 'px,0)');
-            }
-
-            setTimeout(updateTimer, 1000);
-
+        if (!text) {
+            return;
         }
 
-        function countdownFinished() {
-            setTimeout(function(){
-                $('.text-layer').addClass('animated fadeOut');
-                $('.timetable__item').addClass('blurred');
-                gif.hide();
-            }, 1000);
-        }
+        $('.loader').css('visibility', 'visible');
 
-        function randomInteger(min, max) {
-            let rand = min - 0.5 + Math.random() * (max - min + 1);
-            return Math.round(rand);
-        }
+        var time = {
+            min: text.split(':')[0],
+            sec: text.split(':')[1]
+        };
+        var dateStart = new Date();
+        var dateEnd = new Date();
+
+        dateStart.setHours(0);
+        dateStart.setMinutes(0);
+        dateStart.setSeconds(0);
+
+        dateEnd.setHours(0);
+        dateEnd.setMinutes(time.min);
+        dateEnd.setSeconds(time.sec);
+
+        var durationMs = dateEnd.valueOf() - dateStart.valueOf();
+
+        $('head')
+            .append('<style>.loader-progress { animation: grow ' + durationMs + 'ms linear forwards; }</style>')
+            .append('<style>.loader-text { animation: translate ' + durationMs + 'ms linear forwards; }</style>')
+            .append('<style>.loader-text:before { animation: counter ' + durationMs + 'ms linear forwards; }</style>');
     });
 });

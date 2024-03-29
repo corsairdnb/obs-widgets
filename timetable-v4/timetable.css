@@ -23,17 +23,25 @@ body {
 
 .timetable {
     position: absolute;
-    left: 7.4vh;
-    top: 6.6vh;
-    bottom: 0;
+    left: 21.7vh;
+    top: 21vh;
     margin: auto 0;
     display: flex;
     flex-direction: column;
     color: #f2f2f2;
-    width: 100%;
+    width: 75vw;
+    height: 57.5vh;
+    justify-content: center;
 }
 .timetable__item {
     transition: all 2s;
+    display: block;
+    text-transform: uppercase;
+    font-size: 4vh;
+    font-weight: 400;
+    line-height: 1.2em;
+    margin-top: 1.1vh;
+    margin-bottom: 0.3vh;
 }
 
 .timetable__item.animated,
@@ -57,18 +65,19 @@ body {
 .right {
     font-family: 'Inter', sans-serif;
     font-weight: 900;
-    font-size: 6.5vh;
+    font-size: 5.5vh;
     line-height: 1em;
-    letter-spacing: 0;
+    letter-spacing: 0.04vh;
     margin-left: 10vw;
 }
 
 .title {
-    font-size: 4vh;
+    font-size: 3.7vh;
     line-height: 1.2em;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    letter-spacing: -0.2vh;
+    text-transform: none;
+    letter-spacing: 0;
 }
 
 .empty {
@@ -76,81 +85,174 @@ body {
 }
 
 .program {
-    margin-top: 5.15vh;
+    margin-top: 4vh;
+    margin-bottom: 0;
 }
 
 .program:first-child {
     margin-top: 0;
 }
 
-.timetable div {
-    display: block;
-    text-transform: uppercase;
-    font-size: 4vh;
-    font-weight: 400;
-    line-height: 1.2em;
-    padding-right: 23vw;
-}
-
-.timer {
-    display: block;
+.loader {
     position: absolute;
-    right: 6vh;
-    top: 3.5vh;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.2vh;
-    color: #686868;
-}
-.animated {
-    transition: all .3s;
-}
-.hidden {
-    opacity: 0;
+    left: 12vw;
+    bottom: 14.1vh;
+    width: 75.5vw;
+    z-index: 2;
 }
 
-.timer--clock {
+.loader-bg {
+    position: absolute;
+    top: 0;
     width: 100%;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+    background: #2a2a2a;
+    height: 1vh;
 }
 
-.clock-display-grp {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
+.loader-progress {
+    position: absolute;
+    top: 0;
+    width: 0;
+    background: #B9F20D;
+    height: 1vh;
+    /*animation: grow 10s linear forwards;*/
 }
 
-.clock-display-grp .number-grp {
-    width: auto;
-    display: inline-block;
-    height: 10vh;
-    overflow: hidden;
-    vertical-align: top;
+@keyframes grow {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
-.clock-display-grp .number-grp .number-grp-wrp {
-    width: 100%;
-    position: relative;
-    -webkit-transition: -webkit-transform 0s ease-out;
-    transition: transform 0s ease-out;
-}
-
-.clock-display-grp .number-grp .number-grp-wrp .num {
-    width: 100%;
-    position: relative;
-    height: 10vh;
-}
-
-.clock-separator {
-    width: auto;
-    vertical-align: top;
-    display: inline-block;
-    height: 10vh;
-}
-
-.num, .clock-separator {
-    font-size: 6vh;
+.loader-text {
+    position: absolute;
+    font-size: 3.3vh;
     line-height: 0;
-    font-weight: bold;
+    color: #b9f20e;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    left: 0;
+    top: 0.5vh;
+    margin-left: 1vh;
+}
+
+.loader-text:before {
+    content: counter(count);
+    counter-reset: count 0;
+}
+
+@keyframes translate {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(75.5vw);
+    }
+}
+
+@keyframes counter {
+    0% {counter-increment: count 0}
+    1% {counter-increment: count 1}
+    2% {counter-increment: count 2}
+    3% {counter-increment: count 3}
+    4% {counter-increment: count 4}
+    5% {counter-increment: count 5}
+    6% {counter-increment: count 6}
+    7% {counter-increment: count 7}
+    8% {counter-increment: count 8}
+    9% {counter-increment: count 9}
+    10% {counter-increment: count 10}
+    11% {counter-increment: count 11}
+    12% {counter-increment: count 12}
+    13% {counter-increment: count 13}
+    14% {counter-increment: count 14}
+    15% {counter-increment: count 15}
+    16% {counter-increment: count 16}
+    17% {counter-increment: count 17}
+    18% {counter-increment: count 18}
+    19% {counter-increment: count 19}
+    20% {counter-increment: count 20}
+    21% {counter-increment: count 21}
+    22% {counter-increment: count 22}
+    23% {counter-increment: count 23}
+    24% {counter-increment: count 24}
+    25% {counter-increment: count 25}
+    26% {counter-increment: count 26}
+    27% {counter-increment: count 27}
+    28% {counter-increment: count 28}
+    29% {counter-increment: count 29}
+    30% {counter-increment: count 30}
+    31% {counter-increment: count 31}
+    32% {counter-increment: count 32}
+    33% {counter-increment: count 33}
+    34% {counter-increment: count 34}
+    35% {counter-increment: count 35}
+    36% {counter-increment: count 36}
+    37% {counter-increment: count 37}
+    38% {counter-increment: count 38}
+    39% {counter-increment: count 39}
+    40% {counter-increment: count 40}
+    41% {counter-increment: count 41}
+    42% {counter-increment: count 42}
+    43% {counter-increment: count 43}
+    44% {counter-increment: count 44}
+    45% {counter-increment: count 45}
+    46% {counter-increment: count 46}
+    47% {counter-increment: count 47}
+    48% {counter-increment: count 48}
+    49% {counter-increment: count 49}
+    50% {counter-increment: count 50}
+    51% {counter-increment: count 51}
+    52% {counter-increment: count 52}
+    53% {counter-increment: count 53}
+    54% {counter-increment: count 54}
+    55% {counter-increment: count 55}
+    56% {counter-increment: count 56}
+    57% {counter-increment: count 57}
+    58% {counter-increment: count 58}
+    59% {counter-increment: count 59}
+    60% {counter-increment: count 60}
+    61% {counter-increment: count 61}
+    62% {counter-increment: count 62}
+    63% {counter-increment: count 63}
+    64% {counter-increment: count 64}
+    65% {counter-increment: count 65}
+    66% {counter-increment: count 66}
+    67% {counter-increment: count 67}
+    68% {counter-increment: count 68}
+    69% {counter-increment: count 69}
+    70% {counter-increment: count 70}
+    71% {counter-increment: count 71}
+    72% {counter-increment: count 72}
+    73% {counter-increment: count 73}
+    74% {counter-increment: count 74}
+    75% {counter-increment: count 75}
+    76% {counter-increment: count 76}
+    77% {counter-increment: count 77}
+    78% {counter-increment: count 78}
+    79% {counter-increment: count 79}
+    80% {counter-increment: count 80}
+    81% {counter-increment: count 81}
+    82% {counter-increment: count 82}
+    83% {counter-increment: count 83}
+    84% {counter-increment: count 84}
+    85% {counter-increment: count 85}
+    86% {counter-increment: count 86}
+    87% {counter-increment: count 87}
+    88% {counter-increment: count 88}
+    89% {counter-increment: count 89}
+    90% {counter-increment: count 90}
+    91% {counter-increment: count 91}
+    92% {counter-increment: count 92}
+    93% {counter-increment: count 93}
+    94% {counter-increment: count 94}
+    95% {counter-increment: count 95}
+    96% {counter-increment: count 96}
+    97% {counter-increment: count 97}
+    98% {counter-increment: count 98}
+    99% {counter-increment: count 99}
+    100% {counter-increment: count 100}
 }
