@@ -1,0 +1,79 @@
+.banner {
+    width: 93.3vw;
+    height: 6.4vw;
+    position: absolute;
+    left: 3.4vw;
+    bottom: 16.5vh;
+    overflow: hidden;
+    color: #0d0d0d;
+    transition: transform 2s .3s ease-in-out;
+    transform: translateY(1000px);
+    white-space: nowrap;
+    background: #B9F20D;
+}
+.banner.show {
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.artist {
+    font: 900 2.5vw/1em 'Inter', sans-serif;
+    display: block;
+    white-space: nowrap;
+    text-transform: uppercase;
+    position: absolute;
+    left: 3.7vh;
+    top: 3.4vh;
+    letter-spacing: 0.1vh;
+    width: 123vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.logo {
+    right: 25vh;
+    top: 0;
+    width: 7.5vw;
+    height: 6.4vw;
+    display: block;
+    position: absolute;
+}
+.logo:after {
+    content: '';
+    position: absolute;
+    right: -1.5vh;
+    top: 3vh;
+    width: 0.25vh;
+    height: 5.4vh;
+    background: #0d0d0d;
+}
+.logo.empty:after {
+    display: none;
+}
+.logo img {
+    position: absolute;
+    max-width: 82%;
+    max-height: 72%;
+    object-fit: contain;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+}
+
+
+.eleventh-logo {
+    right: -1.5vh;
+    top: 1.7vh;
+    display: block;
+    position: absolute;
+    width: 23vh;
+    height: 12vh;
+}
+
+.eleventh {
+    display: block;
+    width: 18vh;
+    height: auto;
+    object-fit: contain;
+}
