@@ -24,14 +24,13 @@ body {
 .timetable {
     position: absolute;
     left: 21.7vh;
-    top: 21vh;
+    top: 20.5vh;
     margin: auto 0;
     display: flex;
     flex-direction: column;
     color: #f2f2f2;
     width: 75vw;
     height: 57.5vh;
-    justify-content: center;
 }
 .timetable__item {
     transition: all 2s;
@@ -42,12 +41,6 @@ body {
     line-height: 1.2em;
     margin-top: 1.1vh;
     margin-bottom: 0.3vh;
-}
-
-.timetable__item.animated,
-.timetable__item.blurred {
-    -webkit-filter: blur(50px);
-    filter: blur(50px);
 }
 
 .timetable span {display: flex;}
@@ -115,7 +108,6 @@ body {
     width: 0;
     background: #B9F20D;
     height: 1vh;
-    /*animation: grow 10s linear forwards;*/
 }
 
 @keyframes grow {
