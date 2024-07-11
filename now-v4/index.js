@@ -8,6 +8,36 @@ $(function(){
 
     initTemplate();
 
+    function update() {
+        $('.'+CLASS_ARTIST).text(artistText);
+        if (programLogo) {
+            $('.program').attr('src', '../logo/'+programLogo+'.png');
+            $('.logo').removeClass('empty');
+        } else {
+            $('.program').attr('src', '');
+            $('.logo').addClass('empty');
+        }
+    }
+
+    function getFromLocalFile() {
+        $.get('../artist.txt')
+            .done(function(data) {
+                var parts = data.split('\n');
+                artistText = $.trim(parts[0]);
+                programLogo = $.trim(parts[1]);
+                update();
+            });
+    }
+
+    function getFromApi(data) {
+        artistText = data.title;
+        $.get('http://docker.core.oneonetv.ru:9000/streams/'+ data.stream +'/')
+            .done(function(data) {
+                programLogo = data.unique_name;
+                update();
+            });
+    }
+
     function initTemplate() {
         $('body').prepend('' +
             '<div class="'+CLASS_BANNER+'">' +
@@ -26,20 +56,14 @@ $(function(){
     window.showDjBanner = function() {
         window.isDjBannerRun = true;
 
-        $.get('../artist.txt')
+        $.get('http://docker.core.oneonetv.ru:9000/studio-live/1/')
             .done(function(data) {
-                var parts = data.split('\n');
-                // console.log(parts);
-                artistText = $.trim(parts[0]);
-                programLogo = $.trim(parts[1]);
-                $('.'+CLASS_ARTIST).text(artistText);
-                if (programLogo) {
-                    $('.program').attr('src', '../logo/'+programLogo+'.png');
-                    $('.logo').removeClass('empty');
-                } else {
-                    $('.program').attr('src', '');
-                    $('.logo').addClass('empty');
-                }
+                getFromApi(data);
+                $('#log').html(data);
+            })
+            .fail(function(x) {
+                $('#log').html(x);
+                getFromLocalFile();
             });
 
         setTimeout(function(){
