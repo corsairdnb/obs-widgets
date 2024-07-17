@@ -11,8 +11,16 @@ $(function(){
     function update() {
         $('.'+CLASS_ARTIST).text(artistText);
         if (programLogo) {
-            $('.program').attr('src', '../logo/'+programLogo+'.png');
-            $('.logo').removeClass('empty');
+            var imgSrc = '../logo/'+programLogo+'.png';
+            $.get(imgSrc)
+                .done(function() {
+                    $('.program').attr('src', imgSrc);
+                    $('.logo').removeClass('empty');
+                })
+                .fail(function () {
+                    $('.program').attr('src', '');
+                    $('.logo').addClass('empty');
+                });
         } else {
             $('.program').attr('src', '');
             $('.logo').addClass('empty');
