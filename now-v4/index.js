@@ -38,8 +38,8 @@ $(function(){
     }
 
     function getFromApi(data) {
-        artistText = data.title;
-        $.get('http://docker.core.oneonetv.ru:9000/streams/'+ data.stream +'/')
+        artistText = data.artist;
+        $.get('http://docker.studio.eleventhradio.ru:9100/studio-program/'+ data.program +'/')
             .done(function(data) {
                 programLogo = data.unique_name;
                 update();
@@ -64,7 +64,7 @@ $(function(){
     window.showDjBanner = function() {
         window.isDjBannerRun = true;
 
-        $.get('http://docker.core.oneonetv.ru:9000/studio-live/1/')
+        $.get('http://docker.studio.eleventhradio.ru:9100/studio-live/')
             .done(function(data) {
                 getFromApi(data);
                 $('#log').html(data);
