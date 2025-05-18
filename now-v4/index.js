@@ -66,25 +66,38 @@ $(function(){
     window.showDjBanner = function() {
         window.isDjBannerRun = true;
 
-        $.get('http://docker.studio.eleventhradio.ru:9100/studio-settings/')
-          .done(function(data) {
-              if (useServer || (data && data[0] && data[0].useServerSettings)) {
-                  $.get('http://docker.studio.eleventhradio.ru:9100/studio-live/')
-                    .done(function(data) {
-                        $('#log').html(data);
-                        getFromApi(data);
-                    })
-                    .fail(function(x) {
-                        $('#log').html(x);
-                        getFromLocalFile();
-                    });
-              } else {
-                  getFromLocalFile();
-              }
-          })
-          .fail(function(x) {
+        if (useServer) {
+          $.get('http://docker.studio.eleventhradio.ru:9100/studio-live/')
+            .done(function(data) {
+              $('#log').html(data);
+              getFromApi(data);
+            })
+            .fail(function(x) {
+              $('#log').html(x);
               getFromLocalFile();
-          });
+            });
+        } else {
+          $.get('http://docker.studio.eleventhradio.ru:9100/studio-settings/')
+            .done(function(data) {
+              if (useServer || (data && data[0] && data[0].useServerSettings)) {
+                $.get('http://docker.studio.eleventhradio.ru:9100/studio-live/')
+                  .done(function(data) {
+                    $('#log').html(data);
+                    getFromApi(data);
+                  })
+                  .fail(function(x) {
+                    $('#log').html(x);
+                    getFromLocalFile();
+                  });
+              } else {
+                getFromLocalFile();
+              }
+            })
+            .fail(function(x) {
+              getFromLocalFile();
+            });
+        }
+
 
         setTimeout(function(){
             animateIn();
