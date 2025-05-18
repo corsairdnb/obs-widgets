@@ -1,4 +1,6 @@
 $(function(){
+    var useServer = true;
+
     var CLASS_BANNER = 'banner';
     var CLASS_ARTIST = 'artist';
     var delay_1 = 1000;
@@ -38,10 +40,10 @@ $(function(){
     }
 
     function getFromApi(data) {
-        artistText = data.artist;
-        $.get('http://docker.studio.eleventhradio.ru:9100/studio-program/'+ data.program +'/')
-            .done(function(data) {
-                programLogo = data.unique_name;
+        artistText = data[0].artist;
+        $.get('http://docker.studio.eleventhradio.ru:9100/studio-program/'+ data[0].program +'/')
+            .done(function(prog) {
+                programLogo = prog.unique_name;
                 update();
             });
     }
@@ -64,15 +66,25 @@ $(function(){
     window.showDjBanner = function() {
         window.isDjBannerRun = true;
 
-        $.get('http://docker.studio.eleventhradio.ru:9100/studio-live/')
-            .done(function(data) {
-                getFromApi(data);
-                $('#log').html(data);
-            })
-            .fail(function(x) {
-                $('#log').html(x);
-                getFromLocalFile();
-            });
+        $.get('http://docker.studio.eleventhradio.ru:9100/studio-settings/')
+          .done(function(data) {
+              if (useServer || (data && data[0] && data[0].useServerSettings)) {
+                  $.get('http://docker.studio.eleventhradio.ru:9100/studio-live/')
+                    .done(function(data) {
+                        $('#log').html(data);
+                        getFromApi(data);
+                    })
+                    .fail(function(x) {
+                        $('#log').html(x);
+                        getFromLocalFile();
+                    });
+              } else {
+                  getFromLocalFile();
+              }
+          })
+          .fail(function(x) {
+              getFromLocalFile();
+          });
 
         setTimeout(function(){
             animateIn();
