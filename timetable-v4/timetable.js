@@ -1,22 +1,56 @@
 $(function () {
     var timetable = $('.timetable');
+    var preferUseServer = false;
 
-    $.get('../timetable.txt', function (text) {
-        if (!text) return;
+    $.get('http://docker.studio.eleventhradio.ru:9100/preferences/')
+      .done(function(data) {
+          if (preferUseServer || (data && data.useServerSettings)) {
+              $.get('http://docker.studio.eleventhradio.ru:9100/timetable-record/')
+                .done(function(data) {
+                    getFromApi(data);
+                })
+                .fail(function(x) {
+                    getFromLocalFile();
+                });
+          } else {
+              getFromLocalFile();
+          }
+      })
+      .fail(function(x) {
+          getFromLocalFile();
+      });
 
-        var lines = text.split('\n');
+    function getFromApi(data) {
+        data.forEach((item) => {
+            $.get('http://docker.studio.eleventhradio.ru:9100/studio-program/'+ item.program +'/')
+              .done(function(prog) {
+                  var time = item.substr(0, 5)
+                  var title = prog.title
+                  var description = item.description
+                  timetable.append('<div class="timetable__item program"><span class="wrapper"><span class="left">' + time + '</span> <span class="right title">' + title + '</span></span></div>')
+                  timetable.append('<div class="timetable__item"><span class="wrapper"><span class="left"></span><span class="right">' + description + '</span></span></div>')
+              });
+        })
+    }
 
-        for (var i = 0; i < lines.length; i++) {
-            if (/^\d\d:\d\d\s/.test(lines[i])) {
-                var ar = lines[i].split(/^(.*?)\s/);
-                if (ar[1]) {
-                    timetable.append('<div class="timetable__item program"><span class="wrapper"><span class="left">' + ar[1] + '</span> <span class="right title">' + ar[2] + '</span></span></div>')
+    function getFromLocalFile() {
+        $.get('../timetable.txt', function (text) {
+            if (!text) return;
+
+            var lines = text.split('\n');
+
+            for (var i = 0; i < lines.length; i++) {
+                if (/^\d\d:\d\d\s/.test(lines[i])) {
+                    var ar = lines[i].split(/^(.*?)\s/);
+                    if (ar[1]) {
+                        timetable.append('<div class="timetable__item program"><span class="wrapper"><span class="left">' + ar[1] + '</span> <span class="right title">' + ar[2] + '</span></span></div>')
+                    }
+                } else {
+                    timetable.append('<div class="timetable__item"><span class="wrapper"><span class="left"></span><span class="right">' + lines[i] + '</span></span></div>')
                 }
-            } else {
-                timetable.append('<div class="timetable__item"><span class="wrapper"><span class="left"></span><span class="right">' + lines[i] + '</span></span></div>')
             }
-        }
-    });
+        });
+    }
 
     $.get('../time.txt', function (text) {
         if (!text) {
