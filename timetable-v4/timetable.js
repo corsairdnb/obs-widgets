@@ -7,20 +7,27 @@ $(function () {
           if (preferUseServer || (data && data.useServerSettings)) {
               $.get('http://docker.studio.eleventhradio.ru:9100/timetable-record/')
                 .done(function(data) {
-                    getFromApi(data);
+                    getTimetableFromApi(data);
                 })
                 .fail(function(x) {
-                    getFromLocalFile();
+                    getTimetableFromLocalFile();
                 });
           } else {
-              getFromLocalFile();
+              getTimetableFromLocalFile();
+          }
+
+          if (preferUseServer || (data && data.useServerSettings && data.countdown)) {
+              handleTime(data.countdown.substring(3))
+          } else {
+              getCountdownLocalFile();
           }
       })
       .fail(function(x) {
-          getFromLocalFile();
+          getTimetableFromLocalFile();
+          getCountdownLocalFile();
       });
 
-    function getFromApi(data) {
+    function getTimetableFromApi(data) {
       $.get('http://docker.studio.eleventhradio.ru:9100/studio-program/')
         .done(function(programs) {
           data
@@ -36,7 +43,7 @@ $(function () {
         });
     }
 
-    function getFromLocalFile() {
+    function getTimetableFromLocalFile() {
         $.get('../timetable.txt', function (text) {
             if (!text) return;
 
@@ -55,7 +62,7 @@ $(function () {
         });
     }
 
-    $.get('../time.txt', function (text) {
+    function handleTime(text) {
         if (!text) {
             return;
         }
@@ -80,8 +87,14 @@ $(function () {
         var durationMs = dateEnd.valueOf() - dateStart.valueOf();
 
         $('head')
-            .append('<style>.loader-progress { animation: grow ' + durationMs + 'ms linear forwards; }</style>')
-            .append('<style>.loader-text { animation: translate ' + durationMs + 'ms linear forwards; }</style>')
-            .append('<style>.loader-text:before { animation: counter ' + durationMs + 'ms linear forwards; }</style>');
-    });
+          .append('<style>.loader-progress { animation: grow ' + durationMs + 'ms linear forwards; }</style>')
+          .append('<style>.loader-text { animation: translate ' + durationMs + 'ms linear forwards; }</style>')
+          .append('<style>.loader-text:before { animation: counter ' + durationMs + 'ms linear forwards; }</style>');
+    }
+
+    function getCountdownLocalFile() {
+        $.get('../time.txt', function (text) {
+            handleTime(text)
+        });
+    }
 });
