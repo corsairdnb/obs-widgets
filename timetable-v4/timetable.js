@@ -21,16 +21,19 @@ $(function () {
       });
 
     function getFromApi(data) {
-        data.forEach((item) => {
-            $.get('http://docker.studio.eleventhradio.ru:9100/studio-program/'+ item.program +'/')
-              .done(function(prog) {
-                  var time = item.substr(0, 5)
-                  var title = prog.title
-                  var description = item.description
-                  timetable.append('<div class="timetable__item program"><span class="wrapper"><span class="left">' + time + '</span> <span class="right title">' + title + '</span></span></div>')
-                  timetable.append('<div class="timetable__item"><span class="wrapper"><span class="left"></span><span class="right">' + description + '</span></span></div>')
-              });
-        })
+      $.get('http://docker.studio.eleventhradio.ru:9100/studio-program/')
+        .done(function(programs) {
+          data
+            .filter((item) => item.active)
+            .forEach((item) => {
+              var prog = programs.find((p) => p.id === item.program)
+              var time = item.time.substring(0, 5)
+              var title = prog.title
+              var description = item.description
+              timetable.append('<div class="timetable__item program"><span class="wrapper"><span class="left">' + time + '</span> <span class="right title">' + title + '</span></span></div>')
+              timetable.append('<div class="timetable__item"><span class="wrapper"><span class="left"></span><span class="right">' + description + '</span></span></div>')
+            })
+        });
     }
 
     function getFromLocalFile() {
