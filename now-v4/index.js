@@ -1,5 +1,5 @@
 $(function(){
-    var useServer = true;
+    var preferUseServer = false;
 
     var CLASS_BANNER = 'banner';
     var CLASS_ARTIST = 'artist';
@@ -66,7 +66,7 @@ $(function(){
     window.showDjBanner = function() {
         window.isDjBannerRun = true;
 
-        if (useServer) {
+        if (preferUseServer) {
           $.get('http://docker.studio.eleventhradio.ru:9100/studio-live/')
             .done(function(data) {
               $('#log').html(data);
@@ -77,9 +77,9 @@ $(function(){
               getFromLocalFile();
             });
         } else {
-          $.get('http://docker.studio.eleventhradio.ru:9100/studio-settings/')
+          $.get('http://docker.studio.eleventhradio.ru:9100/preferences/')
             .done(function(data) {
-              if (useServer || (data && data[0] && data[0].useServerSettings)) {
+              if (preferUseServer || (data && data.useServerSettings)) {
                 $.get('http://docker.studio.eleventhradio.ru:9100/studio-live/')
                   .done(function(data) {
                     $('#log').html(data);
