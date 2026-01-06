@@ -27,6 +27,17 @@ $(function(){
             $('.program').attr('src', '');
             $('.logo').addClass('empty');
         }
+
+        var donateSrc = '../donate.png';
+        $.get(donateSrc)
+          .done(function() {
+            $('.donate').attr('src', donateSrc);
+            $('.donation').removeClass('empty');
+          })
+          .fail(function () {
+            $('.donate').attr('src', '');
+            $('.donation').addClass('empty');
+          });
     }
 
     function getFromLocalFile() {
@@ -51,6 +62,7 @@ $(function(){
     function initTemplate() {
         $('body').prepend('' +
             '<div class="'+CLASS_BANNER+'">' +
+                '<div class="donation"><img src="" class="donate" /></div>' +
                 '<div class="logo"><img src="" class="program" /></div>' +
                 '<div class="'+CLASS_ARTIST+'"></div>' +
                 '<div class="eleventh-logo"><img src="../logo/eleventh-radio-black.png" class="eleventh" /></div>' +

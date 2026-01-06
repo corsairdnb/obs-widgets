@@ -30,12 +30,15 @@
     text-overflow: ellipsis;
 }
 .logo {
-    right: 25vh;
+    right: 35vh;
     top: 0;
     width: 7.5vw;
     height: 6.4vw;
     display: block;
     position: absolute;
+}
+.donation.empty ~ .logo {
+    right: 25vh;
 }
 .logo:after {
     content: '';
@@ -64,12 +67,15 @@
 
 
 .eleventh-logo {
-    right: -1.5vh;
+    right: 8.9vh;
     top: 1.7vh;
     display: block;
     position: absolute;
     width: 23vh;
     height: 12vh;
+}
+.donation.empty ~ .eleventh-logo {
+    right: -1.5vh;
 }
 
 .eleventh {
@@ -77,4 +83,37 @@
     width: 18vh;
     height: auto;
     object-fit: contain;
+}
+
+.donation {
+    right: 1.5vh;
+    top: 0;
+    width: 5vw;
+    height: 6.4vw;
+    display: block;
+    position: absolute;
+}
+.donation:after {
+    content: '';
+    position: absolute;
+    left: -1.5vh;
+    top: 3vh;
+    width: 0.25vh;
+    height: 5.4vh;
+    background: #0d0d0d;
+}
+.donation.empty:after {
+    display: none;
+}
+.donation img {
+    position: absolute;
+    max-width: 62%;
+    max-height: 62%;
+    object-fit: contain;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    filter: brightness(0);
 }
